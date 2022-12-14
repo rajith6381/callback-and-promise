@@ -13,13 +13,30 @@
 
         //callback
 
-const call = new Promise(function(Resolve, Reject) {
-  setTimeout(function(){ Resolve("HI I AM RAJITH"); }, 3000);
-});
+// const call = new Promise(function(Resolve, Reject) {
+//   setTimeout(function(){ Resolve("HI I AM RAJITH"); }, 3000);
+// });
 
-call.then(function(value) {
-  document.getElementById("out").innerHTML = value;
-});
+// call.then(function(value) {
+//   document.getElementById("out").innerHTML = value;
+// });
+
+
+
+const p1=new Promise((Resolve,Reject) => {
+    setTimeout(()=>{
+        Resolve("pass")
+    },2000)
+})
+
+
+const p2=new Promise((Resolve,Reject) => {
+    setTimeout(()=>{
+        Reject("fail")
+    },2000)
+})
+
+p1.then(console.log).catch(console.log)
 
 
 
