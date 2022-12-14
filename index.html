@@ -11,17 +11,15 @@
 
     <script>
 
-        //callback function
+        //callback
 
-const Promise1 = new Promise(function(Resolve, Reject) {
-  setTimeout(function(){ myResolve("HI I AM RAJITH"); }, 3000);
+const call = new Promise(function(Resolve, Reject) {
+  setTimeout(function(){ Resolve("HI I AM RAJITH"); }, 3000);
 });
 
-Promise1.then(function(value) {
+call.then(function(value) {
   document.getElementById("out").innerHTML = value;
 });
-
-
 
 
 
