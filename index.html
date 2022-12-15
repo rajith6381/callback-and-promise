@@ -8,6 +8,10 @@
 </head>
 <body>
     <p id="out"></p>
+    <h2>JavaScript Promise</h2>
+
+<p id="demo"></p>
+
 
     <script>
 
@@ -38,6 +42,82 @@ const p2=new Promise((Resolve,Reject) => {
 
 p1.then(console.log).catch(console.log)
 
+
+
+
+let myPromise = new Promise(function(myResolve, myReject) {
+
+
+  myResolve(); 
+  myReject(); 
+});
+
+
+myPromise.then(
+  function(value) {  "code if successful"  },
+  function(error) {  "code if some error" }
+);
+
+
+function myDisplayer(some) {
+  document.getElementById("demo").innerHTML =  
+      document.getElementById("demo").innerHTML +"<br>"+ some;
+}
+
+
+let balance = 40;
+
+let mahesh = function(rajith,rashika){
+
+      if(balance > 50){
+    
+      rajith(20);
+    
+    }
+    else{
+    
+          rashika(50);
+    }
+}
+
+
+
+let rajith = function(amount){
+   myDisplayer("spend amount : "+amount);
+}
+
+
+let rajith2 = function(amount){
+   myDisplayer("petrol for bike : "+amount);
+}
+
+
+let rajith3 = function(amount){
+   myDisplayer("Hotel : "+amount);
+}
+
+
+let rashika = function(amount){
+     myDisplayer("Save this amount  for tour : "+amount);
+}
+
+
+
+
+//let appa = new Promise(mahesh);   // mahesh(rajith2,rashika);
+//appa.then(rajith2,rashika);
+
+
+let amma = new Promise(mahesh);    // mahesh(rajith,rajith2);
+// create a new stack for amma promise
+amma.then(rajith,rajith2);
+
+myDisplayer(" Next line  ");
+
+
+// single stack 
+//mahesh(rajith,rajith);
+//myDisplayer(" Next line  ");
 
 
 
